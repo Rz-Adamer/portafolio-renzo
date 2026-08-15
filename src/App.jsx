@@ -9,7 +9,7 @@ const projects = [
     description: 'Interfaz para convertir información operativa en una lectura clara de la rentabilidad. Construí componentes en React y apoyé la integración con servicios y datos.',
     stack: ['React', 'Node.js', 'Express', 'Supabase'],
     tone: 'coral',
-    image: '/public/imgs/rentabilidad.png', // Reemplaza por la ruta de tu imagen (ej: '/images/rentabilidad.png' o una URL)
+    image: '/imgs/rentabilidad.png', // Reemplaza por la ruta de tu imagen (ej: '/images/rentabilidad.png' o una URL)
     link: 'https://sistema-de-rentabilidad-frontend.vercel.app', // Reemplaza por el enlace real a la web de tu proyecto (ej: 'https://mi-proyecto.com')
     github: 'https://github.com/Sistema-de-Rentabilidad/sistema-de-rentabilidad-frontend-', // Opcional: enlace al repositorio de GitHub
   },
@@ -20,7 +20,7 @@ const projects = [
     description: 'Aplicación para registrar, visualizar y dar seguimiento a órdenes de trabajo, conectando una experiencia simple con lógica de negocio y persistencia de datos.',
     stack: ['React', 'Node.js', 'Express', 'Supabase'],
     tone: 'ink',
-    image: '/public/imgs/ordenes.png', // Reemplaza por la ruta de tu imagen
+    image: '/imgs/ordenes.png', // Reemplaza por la ruta de tu imagen
     link: 'https://sistemaot-frontend.vercel.app', // Reemplaza por el enlace a la página web
     github: 'https://github.com/Rz-Adamer/sistemaot-frontend',
   },
@@ -31,7 +31,7 @@ const projects = [
     description: 'Sitio responsive para presentar servicios técnicos y recibir consultas de clientes mediante un formulario funcional desarrollado en PHP.',
     stack: ['PHP', 'HTML', 'CSS', 'JavaScript'],
     tone: 'blue',
-    image: '/public/imgs/sti.png', // Reemplaza por la ruta de tu imagen
+    image: '/imgs/sti.png', // Reemplaza por la ruta de tu imagen
     link: 'https://www.printersolutionsxpress.com', // Reemplaza por el enlace a la página web
     github: '#',
   },
@@ -42,7 +42,7 @@ const projects = [
     description: 'Prototipo de tienda digital con navegación clara y una interfaz orientada a facilitar la exploración y compra de productos.',
     stack: ['Angular', '.NET', 'Responsive UI'],
     tone: 'lime',
-    image: '/public/imgs/cafeteria.jpg', // Reemplaza por la ruta de tu imagen
+    image: '/imgs/cafeteria.jpg', // Reemplaza por la ruta de tu imagen
     link: '#', // Reemplaza por el enlace a la página web
     github: 'https://github.com/Nico0901-2004/E-Commerce-Cafeteria-UTP',
   },
