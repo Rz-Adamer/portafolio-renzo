@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowDown, ArrowUpRight, Code2, ContactRound, Download, Mail, Menu, Moon, Sun, X } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, Code2, ContactRound, Download, ExternalLink, Mail, Menu, Moon, Sun, X } from 'lucide-react'
 
 const projects = [
   {
@@ -9,6 +9,9 @@ const projects = [
     description: 'Interfaz para convertir información operativa en una lectura clara de la rentabilidad. Construí componentes en React y apoyé la integración con servicios y datos.',
     stack: ['React', 'Node.js', 'Express', 'Supabase'],
     tone: 'coral',
+    image: '/public/imgs/rentabilidad.png', // Reemplaza por la ruta de tu imagen (ej: '/images/rentabilidad.png' o una URL)
+    link: 'https://sistema-de-rentabilidad-frontend.vercel.app', // Reemplaza por el enlace real a la web de tu proyecto (ej: 'https://mi-proyecto.com')
+    github: 'https://github.com/Sistema-de-Rentabilidad/sistema-de-rentabilidad-frontend-', // Opcional: enlace al repositorio de GitHub
   },
   {
     index: '02',
@@ -17,6 +20,9 @@ const projects = [
     description: 'Aplicación para registrar, visualizar y dar seguimiento a órdenes de trabajo, conectando una experiencia simple con lógica de negocio y persistencia de datos.',
     stack: ['React', 'Node.js', 'Express', 'Supabase'],
     tone: 'ink',
+    image: '/public/imgs/ordenes.png', // Reemplaza por la ruta de tu imagen
+    link: 'https://sistemaot-frontend.vercel.app', // Reemplaza por el enlace a la página web
+    github: 'https://github.com/Rz-Adamer/sistemaot-frontend',
   },
   {
     index: '03',
@@ -25,6 +31,9 @@ const projects = [
     description: 'Sitio responsive para presentar servicios técnicos y recibir consultas de clientes mediante un formulario funcional desarrollado en PHP.',
     stack: ['PHP', 'HTML', 'CSS', 'JavaScript'],
     tone: 'blue',
+    image: '/public/imgs/sti.png', // Reemplaza por la ruta de tu imagen
+    link: 'https://www.printersolutionsxpress.com', // Reemplaza por el enlace a la página web
+    github: '#',
   },
   {
     index: '04',
@@ -33,6 +42,9 @@ const projects = [
     description: 'Prototipo de tienda digital con navegación clara y una interfaz orientada a facilitar la exploración y compra de productos.',
     stack: ['Angular', '.NET', 'Responsive UI'],
     tone: 'lime',
+    image: '/public/imgs/cafeteria.jpg', // Reemplaza por la ruta de tu imagen
+    link: '#', // Reemplaza por el enlace a la página web
+    github: 'https://github.com/Nico0901-2004/E-Commerce-Cafeteria-UTP',
   },
 ]
 
@@ -131,8 +143,73 @@ function App() {
           <div className="project-grid">
             {projects.map((project) => (
               <article className={`project-card ${project.tone}`} key={project.index}>
-                <div className="card-top mono"><span>{project.index}</span><span>CASO DE ESTUDIO</span></div>
-                <div className="project-mark" aria-hidden="true"><span>{project.index}</span></div>
+                <div className="card-top mono">
+                  <span>{project.index} — CASO DE ESTUDIO</span>
+                  <div className="card-links">
+                    {project.github && project.github !== '#' && (
+                      <a 
+                        href={project.github} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="project-btn" 
+                        title="Ver código en GitHub"
+                      >
+                        <Code2 size={14} /> <span>Código</span>
+                      </a>
+                    )}
+                    {project.link && (
+                      <a 
+                        href={project.link} 
+                        target={project.link.startsWith('http') ? '_blank' : '_self'} 
+                        rel="noreferrer" 
+                        className="project-btn primary" 
+                        title="Visitar página web"
+                      >
+                        <ExternalLink size={14} /> <span>Ver Web</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                <div className="project-preview-wrapper">
+                  <div className="browser-header">
+                    <div className="browser-dots">
+                      <span className="dot red" />
+                      <span className="dot yellow" />
+                      <span className="dot green" />
+                    </div>
+                    <div className="browser-url mono">
+                      {project.link && project.link !== '#' ? project.link.replace(/^https?:\/\//, '') : `renzo.dev/proyecto-${project.index}`}
+                    </div>
+                  </div>
+                  <div className="browser-content">
+                    {project.image ? (
+                      <img src={project.image} alt={`Vista previa de ${project.title}`} className="project-img" />
+                    ) : (
+                      <div className="preview-fallback">
+                        <div className="fallback-navbar">
+                          <div className="fb-logo" />
+                          <div className="fb-nav-items">
+                            <span />
+                            <span />
+                            <span />
+                          </div>
+                        </div>
+                        <div className="fallback-hero">
+                          <div className="fb-title" />
+                          <div className="fb-text" />
+                          <div className="fb-btn" />
+                        </div>
+                        <div className="fallback-cards">
+                          <div className="fb-card" />
+                          <div className="fb-card" />
+                        </div>
+                        <span className="fallback-badge mono">VISTA PREVIA DE LA PÁGINA</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
                 <div className="card-body">
                   <span className="role mono">{project.role}</span>
                   <h3>{project.title}</h3>
